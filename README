@@ -1,0 +1,54 @@
+___________________________________________________________________
+Luciae generator runs together with Fritiof for including the collective 
+effects and the rescattering in pA and AA collisions.
+
+Bug report sent to atai@physics.ucla.edu, sabh@mipsa.ciae.ac.cn
+
+---------------LUCIAE3.0----------------------------------------------------
+
+FORTRAN files you need to run LUCIAE version 3.0:
+     1) luciae3.0.f
+     2) fritiof7.02R.f      
+     3) ariadne4.02R.f   
+     4) pythia5.5.f   
+     5) jetset7.4R.f    
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Make sure that you get all the necessary programs from this package because
+they might be modified somehow in order to run together with LUCIAE
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+The program manual for luciae_2.0 has been published in Comp. 
+Phys. Commu., 90,121 (1995). and The program manual for luciae3.0
+will be published in Comp. Phys. Commu (1998). You can also find it
+in nucl-th/9804001.
+
+
+You will need to create your own main program and link it to the five
+FORTRAN subroutine packages.  A simplest main program for the purpose 
+of testing the installation can be like:  
+
+        PROGRAM FR7_TEST
+C..To be linked with  luciae3.0.o,fritiof7.02R.o ariadne4.02R.o pythia5.5.o jetset7.4R.o 
+        CALL FRSAMPLE
+	END
+This program generates 50 sample LUCIAE events, and then does
+histogram for negatively charged particle multiplicity distribution
+in O+Au collision at 200 GeV/nucleon lab energy.
+
+If successful, executing this main will produce some meaningful output
+in a file 'test.out'.
+
+It is recommended that you keep the five FORTRAN packages (luciae,fritiof, ariadne,
+jetset, pythia) as SEPARATE files and compile them separately into object
+files or archives.  This will make the replacement easier when one of the packages 
+ needs to be replaced. 
+ 
+number of lines in each program:
+ 
+     1) luciae3.0.f         12134      
+     2) fritiof7.02R.f      5782 
+     3) ariadne4.02R.f      5761
+     4) pythia5.5.f         13629
+     5) jetset7.4R.f        11495
+
+---------------LUCIAE3.0----------------------------------------------------
